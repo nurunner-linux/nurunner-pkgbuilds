@@ -1,0 +1,22 @@
+pkgname=nurunner-system-settings
+pkgver=1.0
+pkgrel=1
+pkgdesc="Default system settings for NuRunner"
+arch=('any')
+url='https://github.com/nurunner-linux/nurunner-system-settings'
+license=('GPL')
+groups=('kde')
+depends=('kcm-about-extended' 'kcm-plasma-services')
+makedepends=('git')
+source=('git://github.com/nurunner-linux/nurunner-system-settings')
+md5sums=('SKIP')
+
+pkgver() {
+date +%Y.%m.%d
+}
+
+package() {
+  cd $srcdir/nurunner-system-settings
+  cp -aR etc $pkgdir/
+  cp -aR usr $pkgdir/
+}

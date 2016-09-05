@@ -1,0 +1,14 @@
+pkgname=nurunner-moka-icons
+pkgver=1.0
+pkgrel=1
+pkgdesc="Moka icon theme for NuRunner Rolling"
+arch=('any')
+url='https://github.com/nurunner-linux/nurunner-moka-icons'
+license=('GPL')
+makedepends=('git')
+source=('git://github.com/nurunner-linux/nurunner-moka-icons')
+md5sums=('SKIP')
+package() {
+  cd $srcdir/nurunner-moka-icons
+  cp -aR usr $pkgdir/
+}

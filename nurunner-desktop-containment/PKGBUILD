@@ -1,0 +1,40 @@
+# $Id$
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+# Contributor: Antonio Rojas
+
+pkgname=nurunner-desktop-containment
+pkgver=0
+pkgrel=1
+pkgdesc='The NuRunner Desktop containment'
+arch=('i686' 'x86_64')
+license=('LGPL')
+depends=('plasma-desktop')
+makedepends=('git' 'extra-cmake-modules' 'kdesignerplugin' 'kdoctools' 'python' 'plasma-framework')
+groups=('plasma')
+source=("git://github.com/nurunner-linux/nurunner-desktop-containment")
+md5sums=('SKIP')
+build() {
+  cd ${srcdir}/${pkgname}
+  
+  mkdir -p build
+  cd build
+  cmake ../ \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DLIB_INSTALL_DIR=lib \
+    -DLIBEXEC_INSTALL_DIR=lib \
+    -DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
+    -DBUILD_TESTING=OFF
+  make
+}
+
+pkgver() {
+date +%Y.%m.%d
+}
+
+package() {
+  cd ${srcdir}/${pkgname}/build
+  make DESTDIR="${pkgdir}" install
+}
+ 

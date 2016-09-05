@@ -1,0 +1,16 @@
+pkgname=desktop-theme-blackx
+pkgver=2.0
+pkgrel=3
+pkgdesc="The Black X desktop theme for the Plasma 5"
+arch=('any')
+url='https://github.com/ds9-artwork/desktop-theme-blackx'
+license=('GPL')
+groups=('kde')
+depends=(plasma-workspace)
+makedepends=('git')
+source=('git://github.com/ds9-artwork/desktop-theme-blackx')
+md5sums=('SKIP')
+package() {
+  cd $srcdir/desktop-theme-black-x
+  cp -aR usr $pkgdir/
+}

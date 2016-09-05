@@ -1,0 +1,14 @@
+pkgname=nurunner-whiteclassicia-cursors
+pkgver=1.0
+pkgrel=1
+pkgdesc="White Classicia++ cursors for NuRunner"
+arch=('any')
+url='https://github.com/nurunner-linux/nurunner-whiteclassicia-cursors'
+license=('GPL')
+makedepends=('git')
+source=('git://github.com/nurunner-linux/nurunner-whiteclassicia-cursors')
+md5sums=('SKIP')
+package() {
+  cd $srcdir/nurunner-whiteclassicia-cursors
+  cp -aR usr $pkgdir/
+}

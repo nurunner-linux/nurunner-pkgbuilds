@@ -1,0 +1,16 @@
+pkgname=nurunner-wallpapers-extrapack
+pkgver=1.0
+pkgrel=1
+pkgdesc="Extra Wallpapers for NuRunner"
+arch=('any')
+url='https://github.com/nurunner-linux/nurunner-wallpapers-extrapack'
+license=('GPL')
+groups=('kde')
+replaces=('netrunner-rolling-wallpapers-extra' 'netrunner-exta-wallpapers')
+makedepends=('git')
+source=('git://github.com/nurunner-linux/nurunner-wallpapers-extrapack')
+md5sums=('SKIP')
+package() {
+  cd $srcdir/nurunner-wallpapers-extrapack
+  cp -aR usr $pkgdir/
+}

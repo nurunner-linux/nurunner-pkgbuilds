@@ -1,0 +1,26 @@
+pkgname=nurunner-default-settings
+pkgver=1.0
+pkgrel=1
+pkgdesc="Default settings for Plasma and Applications for NuRunner"
+arch=('any')
+url='https://github.com/nurunner-linux/nurunner-default-settings'
+license=('GPL')
+groups=('kde')
+backup=('etc/sddm.conf' 'etc/samba/smb.conf')
+replaces=('netrunner-rolling-default-settings-2015.09' 'netrunner-rolling-default-settings-2015.10')
+depends=('lnf-theme-bluex' 'carbon-gtk2' 'carbon-gtk3' 'carbon-qt4' 'carbon-qt5' 'nurunner-artwork-sounds' 'lnf-theme-nurunner' 'nurunner-system-settings')
+makedepends=('git')
+source=('git://github.com/nurunner-linux/nurunner-default-settings')
+md5sums=('SKIP')
+
+pkgver() {
+date +%Y.%m.%d
+}
+
+package() {
+  cd $srcdir/nurunner-default-settings
+  cp -aR etc $pkgdir/
+  cp -aR usr $pkgdir/
+  mkdir -p "$pkgdir/etc/skel/.local/share/RecentDocuments"
+  mkdir -p "$pkgdir/etc/skel/.mpd/playlists"
+}

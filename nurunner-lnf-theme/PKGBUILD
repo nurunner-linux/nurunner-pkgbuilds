@@ -1,0 +1,16 @@
+pkgname=nurunner-lnf-theme
+pkgver=1.0
+pkgrel=1
+pkgdesc="The NuRunner look and feel theme for the Plasma 5"
+arch=('any')
+url='https://github.com/nurunner-linux/nurunner-lnf-theme'
+license=('GPL')
+groups=('kde')
+depends=(plasma-workspace)
+makedepends=('git')
+source=('git://github.com/nurunner-linux/nurunner-lnf-theme')
+md5sums=('SKIP')
+package() {
+  cd $srcdir/nurunner-lnf-theme
+  cp -aR usr $pkgdir/
+}

@@ -1,0 +1,22 @@
+pkgname=nurunner-artwork-sounds
+pkgver=1.0
+pkgrel=1
+pkgdesc="Default Sounds for NuRunner Rolling"
+arch=('any')
+url='https://github.com/nurunner-linux/nurunner-artwork-sounds'
+license=('GPL')
+groups=('kde')
+replaces=(netrunner-artwork-sounds-2015.06)
+depends=(plasma-workspace)
+makedepends=('git')
+source=('git://github.com/netrunner-artwork/nurunner-artwork-sounds')
+md5sums=('SKIP')
+
+pkgver() {
+date +%Y.%m.%d
+}
+
+package() {
+  cd $srcdir/nurunner-artwork-sounds
+  cp -aR usr $pkgdir/
+}

@@ -1,0 +1,21 @@
+pkgname=nurunner-desktop-panel
+pkgver=0
+pkgrel=1
+pkgdesc="A Plasma 5 desktop panel for NuRunner"
+arch=('any')
+url='https://github.com/nurunner-linux/nurunner-desktop-panel'
+license=('GPL')
+groups=('kde')
+depends=('expanding-icons-taskmanager')
+makedepends=('git')
+source=('git://github.com/nurunner-linux/nurunner-desktop-panel')
+md5sums=('SKIP')
+
+pkgver() {
+date +%Y.%m.%d
+}
+
+package() {
+  cd $srcdir/nurunner-desktop-panel
+    cp -aR usr $pkgdir/
+}

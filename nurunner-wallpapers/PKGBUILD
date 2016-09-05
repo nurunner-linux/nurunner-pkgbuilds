@@ -1,0 +1,16 @@
+pkgname=nurunner-wallpapers
+pkgver=1.0
+pkgrel=1
+pkgdesc="Default Wallpapers for NuRunner"
+arch=('any')
+url='https://github.com/nurunner-linux/nurunner-wallpapers'
+license=('GPL')
+groups=('kde')
+replaces=('netrunner-rolling-wallpapers-2015.10' 'netrunner-rolling-wallpapers')
+makedepends=('git')
+source=('git://github.com/nurunner-linux/nurunner-wallpapers')
+md5sums=('SKIP')
+package() {
+  cd $srcdir/nurunner-wallpapers
+  cp -aR usr $pkgdir/
+}

@@ -1,0 +1,15 @@
+pkgname=nurunner-kicker-menu
+pkgver=5.5.2
+pkgrel=1
+pkgdesc="This NuRunner kicker menu addition for Plasma 5"
+arch=('any')
+url='https://github.com/nurunner-linux/nurunner-kicker-menu'
+license=('GPL')
+groups=('kde')
+makedepends=('git')
+source=('git://github.com/nurunner-linux/nurunner-kicker-menu')
+md5sums=('SKIP')
+package() {
+  cd $srcdir/nurunner-kicker-menu
+    cp -aR usr $pkgdir/
+}

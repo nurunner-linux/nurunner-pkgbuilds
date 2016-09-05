@@ -1,0 +1,22 @@
+pkgname=nurunner-settings-firefox
+pkgver=1.0
+pkgrel=1
+pkgdesc="NuRunner Firefox profile with artwork"
+arch=('any')
+url='https://github.com/nurunner-linux/nurunner-settings-firefox'
+license=('GPL')
+groups=('kde')
+depends=(firefox-kde)
+replaces=(netrunner-artwork-firefox-2015.09, netrunner-artwork-firefox)
+makedepends=('git')
+source=('git://github.com/nurunner-linux/nurunner-settings-firefox')
+md5sums=('SKIP')
+
+pkgver() {
+date +%Y.%m.%d
+}
+
+package() {
+  cd $srcdir/nurunner-settings-firefox
+  cp -aR etc $pkgdir/
+}

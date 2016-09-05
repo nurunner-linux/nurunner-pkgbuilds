@@ -1,0 +1,14 @@
+pkgname=nurunner-release
+pkgver=2016.09
+pkgrel=1
+pkgdesc="Adds a NuRunner Rolling lsb-release file"
+arch=('any')
+url="N/A"
+license=('GPL')
+depends=('bash')
+source=("lsb-release")
+md5sums=('SKIP')
+
+package() {
+  install -Dm755 lsb-release $pkgdir/etc/lsb-release
+}
