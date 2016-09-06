@@ -11,6 +11,6 @@ makedepends=('git')
 source=('git://github.com/ds9-artwork/desktop-theme-blackx')
 md5sums=('SKIP')
 package() {
-  cd $srcdir/desktop-theme-black-x
+  cd $srcdir/desktop-theme-blackx
   cp -aR usr $pkgdir/
 }
